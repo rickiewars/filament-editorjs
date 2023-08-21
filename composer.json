@@ -1,12 +1,12 @@
 {
-    "name": "rahmanramsi/filament-editorjs",
+    "name": "mrfade/filament-editorjs",
     "description": "Next generation block styled editor.",
     "keywords": [
         "rahmanramsi",
         "laravel",
         "filament-editorjs"
     ],
-    "homepage": "https://github.com/rahmanramsi/filament-editorjs",
+    "homepage": "https://github.com/mrfade/filament-editorjs",
     "license": "MIT",
     "authors": [
         {
