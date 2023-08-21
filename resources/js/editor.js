@@ -79,7 +79,7 @@ document.addEventListener("alpine:init", () => {
           };
 
           if (imageToolConfig.hasOwnProperty('endpoints')) {
-            delete imageToolConfig.uploader;
+            delete defaultConfig.uploader;
           }
 
           enabledTools.image = {
