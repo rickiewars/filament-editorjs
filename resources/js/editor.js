@@ -15,7 +15,7 @@ import DragDrop from "editorjs-drag-drop";
 document.addEventListener("alpine:init", () => {
   Alpine.data(
     "editorjs",
-    ({ state, statePath, placeholder, readOnly, tools, toolsOptions, minHeight }) => ({
+    ({ state, statePath, placeholder, readOnly, debugEnabled, tools, toolsOptions, minHeight }) => ({
       instance: null,
       state: state,
       tools: tools,
@@ -44,8 +44,18 @@ document.addEventListener("alpine:init", () => {
           );
         });
       },
+      log: (...args) => debugEnabled && console.log(...args),
       init() {
         let enabledTools = {};
+
+        this.log('EditorJS Alpine component initialized');
+        this.log('State path:', statePath);
+        this.log('State:', state);
+        this.log('Placeholder:', placeholder);
+        this.log('Read only:', readOnly);
+        this.log('Tools:', tools);
+        this.log('Tools options:', toolsOptions);
+        this.log('Min height:', minHeight);
 
         if (this.tools.includes("header")) {
           enabledTools.header = {

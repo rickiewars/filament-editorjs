@@ -18,6 +18,7 @@
                 statePath: '{{ $getStatePath() }}',
                 placeholder: '{{ $getPlaceholder() }}',
                 readOnly: {{ $isDisabled() ? 'true' : 'false' }},
+                debugEnabled: {{ $isDebugEnabled() ? 'true' : 'false' }},
                 tools: @js($getTools()),
                 toolsOptions: @js($getToolsOptions()),
                 minHeight: @js($getMinHeight())

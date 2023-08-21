@@ -31,6 +31,7 @@ class EditorJs extends Field implements HasFileAttachmentsContract
 
     protected array | Closure $toolsOptions = [];
     protected int | Closure | null $minHeight = 30;
+    protected bool $debug = false;
 
     public function minHeight(int | Closure | null $minHeight): static
     {
@@ -42,5 +43,17 @@ class EditorJs extends Field implements HasFileAttachmentsContract
     public function getMinHeight(): ?int
     {
         return $this->evaluate($this->minHeight);
+    }
+
+    public function debug(bool $debug = true): static
+    {
+        $this->debug = $debug;
+
+        return $this;
+    }
+
+    public function isDebugEnabled(): bool
+    {
+        return $this->debug;
     }
 }
