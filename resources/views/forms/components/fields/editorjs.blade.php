@@ -19,6 +19,7 @@
                 placeholder: '{{ $getPlaceholder() }}',
                 readOnly: {{ $isDisabled() ? 'true' : 'false' }},
                 tools: @js($getTools()),
+                toolsOptions: @js($getToolsOptions()),
                 minHeight: @js($getMinHeight())
             })"
        >

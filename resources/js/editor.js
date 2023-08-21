@@ -15,7 +15,7 @@ import DragDrop from "editorjs-drag-drop";
 document.addEventListener("alpine:init", () => {
   Alpine.data(
     "editorjs",
-    ({ state, statePath, placeholder, readOnly, tools, minHeight }) => ({
+    ({ state, statePath, placeholder, readOnly, tools, toolsOptions, minHeight }) => ({
       instance: null,
       state: state,
       tools: tools,
@@ -54,19 +54,29 @@ document.addEventListener("alpine:init", () => {
           };
         }
         if (this.tools.includes("image")) {
+          const imageToolConfig = toolsOptions.hasOwnProperty('image') ? toolsOptions.image : {};
+          const defaultConfig = {
+            uploader: {
+              uploadByFile: (file) => this.uploadImage(file),
+              uploadByUrl: (url) => {
+                return new Promise(async (resolve) => {
+                  return fetch(url)
+                    .then((res) => res.blob())
+                    .then((blob) => resolve(this.uploadImage(blob)));
+                });
+              },
+            },
+          };
+
+          if (imageToolConfig.hasOwnProperty('endpoints')) {
+            delete imageToolConfig.uploader;
+          }
+
           enabledTools.image = {
             class: ImageTool,
             config: {
-              uploader: {
-                uploadByFile: (file) => this.uploadImage(file),
-                uploadByUrl: (url) => {
-                  return new Promise(async (resolve) => {
-                    return fetch(url)
-                      .then((res) => res.blob())
-                      .then((blob) => resolve(this.uploadImage(blob)));
-                  });
-                },
-              },
+              ...defaultConfig,
+              ...imageToolConfig,
             },
           };
         }
