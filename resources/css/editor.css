@@ -3,7 +3,7 @@
 /* @tailwind utilities; */
 
 .editorjs-wrapper {
-  @apply border rounded-lg relative bg-white shadow-sm prose prose-sm dark:prose-invert border-gray-300 mx-auto dark:bg-white/5 dark:border-gray-600;
+  @apply border rounded-lg relative bg-white shadow-sm prose prose-sm dark:prose-invert border-gray-300 mx-auto dark:bg-white/5 dark:border-gray-600 ring-1 ring-gray-950/5 dark:ring-white/10;
   max-width: unset;
 }
 
@@ -71,4 +71,28 @@
 
 .ce-inline-tool-input {
   @apply block w-full transition duration-75 focus:ring-1 focus:ring-inset disabled:opacity-70 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600;
+}
+
+.cdx-attaches {
+  @apply dark:bg-gray-800 dark:border-gray-600;
+}
+
+.cdx-attaches .cdx-attaches__button {
+  @apply dark:text-white dark:hover:bg-gray-500;
+}
+
+.cdx-checklist__item-checkbox-check {
+  @apply dark:border-gray-600 dark:bg-gray-800;
+}
+
+.cdx-block.cdx-warning::before {
+  @apply dark:invert;
+}
+
+.tc-add-row {
+  @apply dark:hover:bg-gray-500;
+}
+
+.tc-row, .tc-cell {
+  @apply dark:border-gray-600;
 }
