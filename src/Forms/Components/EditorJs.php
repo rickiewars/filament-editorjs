@@ -16,17 +16,24 @@ class EditorJs extends Field implements HasFileAttachmentsContract
     protected string $view = 'filament-editorjs::forms.components.fields.editorjs';
 
     protected array | Closure $tools = [
+        'attaches',
+        'checklist',
+        'code',
+        'delimiter',
         'header',
         'image',
-        'delimiter',
-        'list',
-        'underline',
-        'quote',
-        'table',
-        'raw',
-        'code',
         'inline-code',
+        'link',
+        'list',
+        'marker',
+        'nested-list',
+        'paragraph',
+        'quote',
+        'raw',
         'style',
+        'table',
+        'underline',
+        'warning',
     ];
 
     protected array | Closure $toolsOptions = [];
