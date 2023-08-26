@@ -79,7 +79,7 @@
 }
 
 .cdx-button {
-  @apply dark:text-gray-200 dark:hover:bg-gray-800;
+  @apply dark:text-gray-200 dark:bg-gray-800 dark:hover:bg-gray-600;
 }
 
 .cdx-attaches .cdx-attaches__button {
@@ -95,6 +95,10 @@
 }
 
 .tc-table {
+  @apply dark:border-gray-600;
+}
+
+.tc-table--heading .tc-row:first-child {
   @apply dark:border-gray-600;
 }
 
