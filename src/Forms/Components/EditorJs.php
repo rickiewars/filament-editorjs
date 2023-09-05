@@ -21,6 +21,7 @@ class EditorJs extends Field implements HasFileAttachmentsContract
         'code',
         'delimiter',
         'header',
+        'image-gallery',
         'image',
         'inline-code',
         'link',

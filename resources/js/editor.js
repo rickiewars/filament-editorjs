@@ -4,6 +4,7 @@ import Code from '@editorjs/code';
 import Delimiter from '@editorjs/delimiter';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
+import ImageGallery from 'editorjs-gallery';
 import ImageTool from '@editorjs/image';
 import InlineCode from '@editorjs/inline-code';
 import LinkTool from '@editorjs/link';
@@ -143,6 +144,34 @@ document.addEventListener('alpine:init', () => {
                         config: {
                             ...imageToolDefaultConfig,
                             ...imageToolConfig,
+                        },
+                    };
+                }
+
+                if (this.tools.includes('image-gallery')) {
+                    const imageGalleryToolConfig = toolsOptions.hasOwnProperty('image-gallery') ? toolsOptions['image-gallery'] : {};
+                    const imageGalleryToolDefaultConfig = {
+                        uploader: {
+                            uploadByFile: (file) => this.uploadImage(file),
+                            uploadByUrl: (url) => {
+                                return new Promise(async (resolve) => {
+                                    return fetch(url)
+                                        .then((res) => res.blob())
+                                        .then((blob) => resolve(this.uploadImage(blob)));
+                                });
+                            },
+                        },
+                    };
+
+                    if (imageGalleryToolConfig.hasOwnProperty('endpoints')) {
+                        delete imageGalleryToolDefaultConfig.uploader;
+                    }
+
+                    enabledTools.imageGallery = {
+                        class: ImageGallery,
+                        config: {
+                            ...imageGalleryToolDefaultConfig,
+                            ...imageGalleryToolConfig,
                         },
                     };
                 }
