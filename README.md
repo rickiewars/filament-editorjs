@@ -31,25 +31,25 @@ By default all tools are enabled. This is a list of available tools:
 
 ```php
 [
-    'attaches',
-    'checklist',
-    'code',
-    'delimiter',
-    'header',
-    'image-gallery',
-    'image',
-    'inline-code',
-    'link',
-    'list',
-    'marker',
-    'nested-list',
-    'paragraph',
-    'quote',
-    'raw',
-    'style',
-    'table',
-    'underline',
-    'warning',
+    'attaches',         // @editorjs/attaches
+    'checklist',        // @editorjs/checklist
+    'code',             // @editorjs/code
+    'delimiter',        // @editorjs/delimiter
+    'header',           // @editorjs/header
+    'image-gallery',    // editorjs-gallery
+    'image',            // @editorjs/image
+    'inline-code',      // @editorjs/inline-code
+    'link',             // @editorjs/link
+    'list',             // @editorjs/list
+    'marker',           // @editorjs/marker
+    'nested-list',      // @editorjs/nested-list
+    'paragraph',        // @editorjs/paragraph
+    'quote',            // @editorjs/quote
+    'raw',              // @editorjs/raw
+    'style',            // editorjs-style
+    'table',            // @editorjs/table
+    'underline',        // @editorjs/underline
+    'warning',          // @editorjs/warning
 ]
 ```
 
