@@ -31,17 +31,25 @@ By default all tools are enabled. This is a list of available tools:
 
 ```php
 [
-    'header',
-    'image',
-    'delimiter',
-    'list',
-    'underline',
-    'quote',
-    'table',
-    'raw',
+    'attaches',
+    'checklist',
     'code',
+    'delimiter',
+    'header',
+    'image-gallery',
+    'image',
     'inline-code',
+    'link',
+    'list',
+    'marker',
+    'nested-list',
+    'paragraph',
+    'quote',
+    'raw',
     'style',
+    'table',
+    'underline',
+    'warning',
 ]
 ```
 
