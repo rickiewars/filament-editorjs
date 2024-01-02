@@ -56,13 +56,41 @@ By default all tools are enabled. This is a list of available tools:
 You can disable any of them using by passing an array of tool names:
 
 ```php
-EditorJs::make('content')->disableTools(['image', 'raw']);
+EditorJs::make('content')
+    ->disableTools(['image', 'raw']);
 ```
 
 Also you can enable only certain tools:
 
 ```php
-EditorJs::make('content')->tools(['image', 'raw']);
+EditorJs::make('content')
+    ->tools(['image', 'raw']);
+```
+
+### Tools Options
+You can pass options to the tools:
+
+```php
+EditorJs::make('content')
+    ->toolsOptions([
+        'attaches' => [
+            'endpoint' => '/upload/file',
+        ],
+        'image' => [
+            'endpoints' => [
+                'byFile' => '/upload/image',
+                'byUrl' => '/upload/image-by-url',
+            ],
+        ],
+    ]);
+```
+
+### Debugging
+To debug the editor, you can enable the debug mode:
+
+```php
+EditorJs::make('content')
+    ->debug();
 ```
 
 ## Changelog
